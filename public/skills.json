@@ -1,0 +1,98 @@
+[
+  {
+    "skillId": 1,
+    "skillName": "Beginner Guitar Lessons",
+    "providerName": "Alex Martin",
+    "providerEmail": "alex@skillswap.com",
+    "price": 20,
+    "rating": 4.8,
+    "slotsAvailable": 3,
+    "description": "Acoustic guitar classes for complete beginners. Learn chords, strumming patterns, and popular songs step by step.",
+    "image": "https://i.ibb.co.com/j9hyyGQv/Gemini-Generated-Image-7j1kn47j1kn47j1k.png",
+    "category": "Music"
+  },
+  {
+    "skillId": 2,
+    "skillName": "Spoken English Practice",
+    "providerName": "Sara Hossain",
+    "providerEmail": "sara@skillswap.com",
+    "price": 10,
+    "rating": 4.6,
+    "slotsAvailable": 5,
+    "description": "Conversational English sessions designed to improve fluency, pronunciation, and vocabulary through real discussions.",
+    "image": "https://i.ibb.co.com/PsM9Fg7w/Gemini-Generated-Image-z8477dz8477dz847.png",
+    "category": "Language"
+  },
+  {
+    "skillId": 3,
+    "skillName": "Intro to Web Development",
+    "providerName": "James Park",
+    "providerEmail": "james@skillswap.com",
+    "price": 25,
+    "rating": 4.9,
+    "slotsAvailable": 4,
+    "description": "Learn HTML, CSS, and basic JavaScript to build your first website. Great for students and beginners entering tech.",
+    "image": "https://i.ibb.co.com/N20wTkPk/Gemini-Generated-Image-5yor9e5yor9e5yor.png",
+    "category": "Technology"
+  },
+  {
+    "skillId": 4,
+    "skillName": "Yoga for Stress Relief",
+    "providerName": "Ananya Sen",
+    "providerEmail": "ananya@skillswap.com",
+    "price": 15,
+    "rating": 4.7,
+    "slotsAvailable": 6,
+    "description": "Gentle yoga sessions that focus on deep breathing, stretching, and mindfulness for stress management and flexibility.",
+    "image": "https://i.ibb.co.com/DDQwNQ7n/Gemini-Generated-Image-7uq3567uq3567uq3.png",
+    "category": "Wellness"
+  },
+  {
+    "skillId": 5,
+    "skillName": "Creative Writing Workshop",
+    "providerName": "David Kim",
+    "providerEmail": "david@skillswap.com",
+    "price": 18,
+    "rating": 4.5,
+    "slotsAvailable": 5,
+    "description": "Enhance your storytelling and writing style. Learn how to craft compelling narratives and characters with feedback sessions.",
+    "image": "https://i.ibb.co.com/mrkcVJCj/Gemini-Generated-Image-n8n5yqn8n5yqn8n5.png",
+    "category": "Art & Literature"
+  },
+  {
+    "skillId": 6,
+    "skillName": "Basic Photography Skills",
+    "providerName": "Maya Rahman",
+    "providerEmail": "maya@skillswap.com",
+    "price": 22,
+    "rating": 4.9,
+    "slotsAvailable": 2,
+    "description": "Master your camera settings, lighting techniques, and composition to take professional-looking photos using any camera.",
+    "image": "https://i.ibb.co.com/m5yy1WjK/Gemini-Generated-Image-oq2v7doq2v7doq2v.png",
+    "category": "Photography"
+  },
+  {
+    "skillId": 7,
+    "skillName": "Cooking Bangladeshi Dishes",
+    "providerName": "Tanvir Ahmed",
+    "providerEmail": "tanvir@skillswap.com",
+    "price": 12,
+    "rating": 4.4,
+    "slotsAvailable": 4,
+    "description": "Learn to cook traditional Bangladeshi meals like biryani, bhuna khichuri, and fish curry from scratch.",
+    "image": "https://i.ibb.co.com/DPw8dBzD/Gemini-Generated-Image-wfyc3hwfyc3hwfyc.png",
+    "category": "Cooking"
+  },
+  {
+    "skillId": 8,
+    "skillName": "Graphic Design for Beginners",
+    "providerName": "Riya Chakma",
+    "providerEmail": "riya@skillswap.com",
+    "price": 28,
+    "rating": 5.0,
+    "slotsAvailable": 3,
+    "description": "Learn the fundamentals of design, color theory, and typography using Canva and Adobe tools for personal projects.",
+    "image": "https://i.ibb.co.com/bj2d7vn0/Gemini-Generated-Image-9a5adm9a5adm9a5a.png",
+    "category": "Design"
+  }
+]
