@@ -1,16 +1,31 @@
-import React, { use } from "react";
-import { Link } from "react-router";
+import React, { use, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../../context/AuthProvider";
+import { FaEye, FaEyeSlash, FaRegEye } from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
-  const { welcomeUser } = use(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+  console.log(location);
+  const [showPass, setShowPass] = useState(false);
+  const { googleSignIn, signIn, error } = use(AuthContext);
   const handleLogin = (e) => {
     e.preventDefault();
-    const email = e.target.email.value;
-    const password = e.target.password.value;
-    welcomeUser(email, password);
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    signIn(email, password)
+      .then(() => navigate(`${location.state ? location.state : "/"}`))
+      .catch((error) => console.log(error));
+    form.reset();
   };
 
+  const handleGoogleLogin = () => {
+    googleSignIn().then(() =>
+      navigate(`${location.state ? location.state : "/"}`)
+    );
+  };
   return (
     <div className="flex justify-center items-center min-h-screen text-primary">
       <div className="card bg-base-100 w-full max-w-2xl shrink-0 shadow-2xl p-18">
@@ -27,17 +42,36 @@ const Login = () => {
               className="input w-full bg-base-200 border-none rounded-lg"
               placeholder="Enter your email address"
             />
-            <label className="label">Password</label>
-            <input
-              type="password"
-              name="password"
-              className="input w-full bg-base-200 border-none rounded-lg"
-              placeholder="Enter your password"
-            />
+            <div className="relative">
+              <label className="label">Password</label>
+              <input
+                type={showPass ? "text" : "password"}
+                name="password"
+                className="input w-full bg-base-200 border-none rounded-lg"
+                placeholder="Enter your password"
+              />
+              <button
+                type="button"
+                className="absolute top-7 right-3 text-xl text-gray-500"
+                onClick={() => setShowPass(!showPass)}
+              >
+                {showPass ? <FaEyeSlash /> : <FaEye />}
+              </button>
+            </div>
+            {error && <p className="text-red-500">{error}</p>}
             <div>
               <a className="link link-hover">Forgot password?</a>
             </div>
             <button className="btn btn-primary mt-4">Login</button>
+            <p className="flex justify-center text-md font-bold">or</p>
+            {/* Google */}
+            <button
+              type="button"
+              onClick={handleGoogleLogin}
+              className="btn bg-white btn-outline text-black border-[#e5e5e5]"
+            >
+              <FcGoogle size={24} /> Login with Google
+            </button>
             <p className="mt-5 text-center">
               Dont’t Have An Account ?{" "}
               <Link className="text-secondary hover:underline" to="/signup">

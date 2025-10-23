@@ -8,28 +8,28 @@ const providers = [
     name: "Alex Martin",
     skill: "Guitar Lessons",
     rating: 4.9,
-    image: "https://i.ibb.co/92ZJdKC/alex-martin.jpg",
+    image: "https://bv.vc/wp-content/uploads/2024/02/alex-martin-headshot-853x1024.jpg",
   },
   {
     id: 2,
     name: "Sara Hossain",
     skill: "Spoken English",
     rating: 4.8,
-    image: "https://i.ibb.co/ZYTVbtP/sara-hossain.jpg",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvmUkKEpnx2Jr6tUNG3XPDYSY8myq8kIwOfQ&s",
   },
   {
     id: 3,
     name: "Maya Rahman",
     skill: "Photography",
     rating: 4.9,
-    image: "https://i.ibb.co/jwjGXW9/maya-rahman.jpg",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuKl0K-vLQk9XkW1KTOkGGijrUaTrnMU1WiQ&s",
   },
   {
     id: 4,
     name: "Riya Chakma",
     skill: "Graphic Design",
     rating: 5.0,
-    image: "https://i.ibb.co/n3jTCSY/riya-chakma.jpg",
+    image: "https://media.licdn.com/dms/image/v2/D5603AQHnqEmlIJ-Egg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1694021681123?e=2147483647&v=beta&t=afIEtiXYgQzb90CrBtEO08If8InQFyOQNb9jl2FA5Wk",
   },
 ];
 
