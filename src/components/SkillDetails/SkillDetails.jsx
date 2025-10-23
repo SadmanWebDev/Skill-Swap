@@ -94,17 +94,17 @@ const SkillDetails = () => {
             type="text"
             name="name"
             placeholder="Your Name"
-            className="input input-bordered w-full"
+            className="input border-0 rounded-lg input-bordered w-full"
             required
           />
           <input
             type="email"
             name="email"
             placeholder="Your Email"
-            className="input input-bordered w-full"
+            className="input border-0 rounded-lg input-bordered w-full"
             required
           />
-          <button type="submit" className="btn btn-primary w-full">
+          <button type="submit" className="btn btn-primary w-full rounded-lg">
             Book Session
           </button>
         </form>
