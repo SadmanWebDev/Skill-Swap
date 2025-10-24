@@ -1,6 +1,9 @@
-import React from "react";
+import React, { use } from "react";
+import { AuthContext } from "../../context/AuthProvider";
+import { Link } from "react-router";
 
 const Footer = () => {
+  const { user } = use(AuthContext);
   return (
     <div>
       <footer className="footer sm:footer-horizontal bg-base-300 text-base-content items-center p-4">
@@ -52,6 +55,24 @@ const Footer = () => {
               <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path>
             </svg>
           </a>
+          {user ? (
+            <div
+              className="tooltip tooltip-left"
+              data-tip={user.displayName || "No Name"}
+            >
+              <img
+                src={
+                  user.photoURL || "https://i.ibb.co.com/ycy5ZkrF/user.png"
+                }
+                alt=""
+                className="w-10 h-10 rounded-full border border-gray-500 cursor-pointer"
+              />
+            </div>
+          ) : (
+            <Link to="/login" className="btn btn-primary btn-outline">
+              Login
+            </Link>
+          )}
         </nav>
       </footer>
     </div>

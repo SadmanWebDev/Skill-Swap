@@ -4,7 +4,7 @@ import useSkills from "../../hooks/useSkills";
 import { FaStar, FaUser, FaDollarSign } from "react-icons/fa";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import toast from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 
 const SkillDetails = () => {
   const { id } = useParams();
@@ -33,6 +33,7 @@ const SkillDetails = () => {
 
   return (
     <section className="max-w-5xl mx-auto my-20 px-5">
+      <Toaster/>
       {/* Skill Info */}
       <div
         data-aos="fade-up"
