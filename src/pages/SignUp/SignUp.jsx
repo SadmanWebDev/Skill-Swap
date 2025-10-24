@@ -1,9 +1,14 @@
-import React, { use } from "react";
-import { Link } from "react-router";
+import React, { use, useState } from "react";
+import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../../context/AuthProvider";
+import { FcGoogle } from "react-icons/fc";
+import { FaEye } from "react-icons/fa";
+import { FaEyeSlash } from "react-icons/fa6";
 
 const SignUp = () => {
-  const { createUser, setUser } = use(AuthContext);
+  const { createUser, googleSignIn, setUser } = use(AuthContext);
+  const navigate = useNavigate();
+  const [showPass, setShowPass] = useState(false);
 
   const handleSignUp = (e) => {
     e.preventDefault();
@@ -14,6 +19,13 @@ const SignUp = () => {
     createUser(email, password);
     setUser();
   };
+
+  const handleGoogleLogin = () => {
+    googleSignIn().then(() =>
+      navigate(`${location.state ? location.state : "/"}`)
+    );
+  };
+
   return (
     <div className="flex justify-center items-center min-h-screen text-primary">
       <div className="card bg-base-100 w-full max-w-2xl shrink-0 shadow-2xl p-18">
@@ -46,14 +58,23 @@ const SignUp = () => {
               placeholder="Enter your email address"
               required
             />
-            <label className="label">Password</label>
-            <input
-              type="password"
-              name="password"
-              className="input w-full bg-base-200 border-none rounded-lg"
-              placeholder="Enter your password"
-              required
-            />
+            <div className=" relative">
+              <label className="label">Password</label>
+              <input
+                type={showPass ? "text" : "password"}
+                name="password"
+                className="input w-full bg-base-200 border-none rounded-lg"
+                placeholder="Enter your password"
+                required
+              />
+              <button
+              type="button"
+                onClick={() => setShowPass(!showPass)}
+                className="absolute top-8 right-3 text-sm"
+              >
+                {showPass ? <FaEyeSlash /> : <FaEye />}
+              </button>
+            </div>
             <div>
               <label className="label">
                 <input type="checkbox" defaultChecked className="checkbox" />
@@ -62,6 +83,15 @@ const SignUp = () => {
             </div>
             <button type="submit" className="btn btn-primary mt-4">
               SignUp
+            </button>
+            <p className="flex justify-center">or</p>
+            {/* Google */}
+            <button
+              type="button"
+              onClick={handleGoogleLogin}
+              className="btn bg-white btn-outline text-black border-[#e5e5e5]"
+            >
+              <FcGoogle size={24} /> Login with Google
             </button>
             <p className="mt-5 text-center">
               Already Have An Account ?{" "}

@@ -1,12 +1,17 @@
 import React, { use } from "react";
 import { FaUser } from "react-icons/fa";
 import { AuthContext } from "../../context/AuthProvider";
+import toast, { Toaster } from "react-hot-toast";
 
 const MyProfile = () => {
   const { user } = use(AuthContext);
+
+  const handleUpdate = () =>{
+    toast.success("Profile Updated!")
+  }
   return (
     <div className="card min-h-screen flex justify-center items-center text-center ">
-        
+        <Toaster/>
       <div className="bg-white/20 backdrop-blur-xl p-20 rounded-2xl shadow-lg">
         {/* Your Profile Content Here */}
         <h1 className="text-5xl font-semibold mb-6">Profile</h1>
@@ -15,7 +20,7 @@ const MyProfile = () => {
         </div>
 
         <h2 className="text-3xl font-semibold mb-2  ">{user?.displayName}</h2>
-        <p className="text-xl mb-6">Email: {user?.email}</p>
+        <p className="text-xl mb-6">{user?.email}</p>
         {/* Open the modal using document.getElementById('ID').showModal() method */}
         <button
           className="btn btn-primary btn-outline"
@@ -46,8 +51,7 @@ const MyProfile = () => {
             </form>
             <div className="modal-action">
               <form method="dialog">
-                {/* if there is a button in form, it will close the modal */}
-                <button className="btn btn-primary btn-outline">Update</button>
+                <button onClick={handleUpdate} className="btn btn-primary btn-outline">Update</button>
               </form>
             </div>
           </div>

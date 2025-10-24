@@ -8,14 +8,13 @@ import { AuthContext } from "../../context/AuthProvider";
 const Navbar = () => {
   const { user, kickOutUser } = use(AuthContext);
   const handleSignOut = () => {
-    kickOutUser()
+    kickOutUser();
   };
   return (
     <nav className="max-w-11/12 mx-auto">
       <div className="navbar bg-base-100">
         <div className="flex-1">
           <img className="w-10 " src={logo} alt="" />
-          {user && <h2>{user.email}</h2>}
         </div>
         <div className="flex-none">
           <div className="dropdown dropdown-end">
@@ -31,12 +30,26 @@ const Navbar = () => {
               </div>
             </Link>
             {user ? (
-              <Link
-                onClick={handleSignOut}
-                className="btn btn-outline btn-primary mr-3"
-              >
-                SignOut
-              </Link>
+              <>
+                <Link
+                  onClick={handleSignOut}
+                  className="btn btn-outline btn-primary mr-3"
+                >
+                  SignOut
+                </Link>
+                <Link to="/profile" className="btn btn-circle">
+                  <div
+                    className="tooltip tooltip-left"
+                    data-tip={user.displayName || "No Name"}
+                  >
+                    <img
+                      src={"https://i.ibb.co.com/ycy5ZkrF/user.png"}
+                      alt=""
+                      className="w-10 h-10 rounded-full border border-gray-500 cursor-pointer"
+                    />
+                  </div>
+                </Link>
+              </>
             ) : (
               <>
                 <Link to="/login" className="btn btn-outline btn-primary mr-3">
@@ -52,17 +65,6 @@ const Navbar = () => {
               className="card card-compact dropdown-content bg-base-100 z-1 mt-3 w-52 shadow"
             ></div>
           </div>
-          <Link to="/profile">
-            <div
-              tabIndex={0}
-              role="button"
-              className="btn btn-outline btn-primary btn-circle border-0 "
-            >
-              <div className="w-10 rounded-full">
-                <CgProfile size={40} />
-              </div>
-            </div>
-          </Link>
         </div>
       </div>
     </nav>
