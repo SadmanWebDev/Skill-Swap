@@ -21,7 +21,6 @@ export const router = createBrowserRouter([
       },
       {
         path: "/skills/:id",
-        // Component: SkillDetails
         element: (
           <PrivetRoute>
             <SkillDetails></SkillDetails>
