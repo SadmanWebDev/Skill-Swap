@@ -37,7 +37,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/profile",
-        Component: MyProfile,
+        element: (
+          <PrivetRoute>
+            <MyProfile></MyProfile>
+          </PrivetRoute>
+        ),
       },
       {
         path: "/forget-password",

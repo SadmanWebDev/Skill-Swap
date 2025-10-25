@@ -1,5 +1,4 @@
 import React, { useContext, useState } from "react";
-import { FaUser } from "react-icons/fa";
 import { AuthContext } from "../../context/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import auth from "../../utils/firebase.config";
@@ -7,8 +6,8 @@ import toast, { Toaster } from "react-hot-toast";
 
 const MyProfile = () => {
   const { user } = useContext(AuthContext);
-  const [name, setName] = useState(user?.displayName || "");
-  const [photoURL, setPhotoURL] = useState(user?.photoURL || "");
+  const [name, setName] = useState();
+  const [photoURL, setPhotoURL] = useState();
 
   const handleUpdate = () => {
     updateProfile(auth.currentUser, {
@@ -32,13 +31,11 @@ const MyProfile = () => {
         {user?.photoURL ? (
           <img
             src={user.photoURL}
-            alt="Profile"
+            alt=""
             className="w-24 h-24 rounded-full border mx-auto mb-5 object-cover"
           />
         ) : (
-          <div className="btn btn-circle border-blue-400 mb-5">
-            <FaUser size={30} />
-          </div>
+          <img src="https://i.ibb.co.com/ycy5ZkrF/user.png" alt="" />
         )}
         <h2 className="text-3xl font-semibold mb-2">{user?.displayName}</h2>
         <p className="text-xl mb-6">{user?.email}</p>

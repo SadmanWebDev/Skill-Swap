@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from "react";
 import { useLocation } from "react-router";
-// widow.location.href
 
 const ForgetPassForm = () => {
   const emailRef = useRef();
@@ -19,9 +18,8 @@ const ForgetPassForm = () => {
 
   return (
     <div className="flex justify-center items-center min-h-screen">
-      <form className="card w-1/3">
+      <form className="card bg-base-100 p-20 rounded-2xl w-1/3">
         <fieldset className=" fieldset">
-          <label className="label">Email</label>
           <input
             ref={emailRef}
             type="email"

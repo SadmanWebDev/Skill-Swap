@@ -1,7 +1,7 @@
 import React, { use, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../../context/AuthProvider";
-import { FaEye, FaEyeSlash, FaRegEye } from "react-icons/fa";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
@@ -79,45 +79,6 @@ const Login = () => {
             >
               Forget Password?
             </button>
-
-            {/* Open the modal using document.getElementById('ID').showModal() method */}
-            {/* <div>
-              <button
-                type="button"
-                className="link link-hover"
-                onClick={() =>
-                  document.getElementById("my_modal_1").showModal()
-                }
-              >
-                Forget Password?
-              </button>
-              <dialog id="my_modal_1" className="modal">
-                <div className="modal-box">
-                  <fieldset>
-                    <label className="label">Email</label>
-                    <input
-                      type="email"
-                      name="email"
-                      value={email}
-                      className="input w-full bg-base-200 border-none rounded-lg"
-                      placeholder="Enter your email address"
-                    />
-                  </fieldset>
-                  <div className="modal-action">
-                    <div method="dialog">
-                      if there is a button in form, it will close the modal
-                      <button
-                        type="button"
-                        onClick={"https://mail.google.com/"}
-                        className="btn btn-primary btn-outline"
-                      >
-                        Reset
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </dialog>
-            </div> */}
             <button className="btn btn-primary mt-4">Login</button>
           </fieldset>
         </form>

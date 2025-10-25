@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router";
 import useSkills from "../../hooks/useSkills";
-import { FaStar, FaUser, FaDollarSign } from "react-icons/fa";
+import { FaUser, FaDollarSign } from "react-icons/fa";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import toast, { Toaster } from "react-hot-toast";
+import Loading from "../Loading/Loading";
 
 const SkillDetails = () => {
   const { id } = useParams();
@@ -24,42 +25,29 @@ const SkillDetails = () => {
   };
 
   if (!skill) {
-    return (
-      <div className="flex justify-center items-center h-[70vh]">
-        <span className="loading loading-ring loading-lg text-primary"></span>
-      </div>
-    );
+    return <Loading></Loading>;
   }
 
   return (
     <section className="max-w-5xl mx-auto my-20 px-5">
-      <Toaster/>
-      {/* Skill Info */}
+      <Toaster />
       <div
         data-aos="fade-up"
         className="bg-base-100 rounded-2xl shadow-lg overflow-hidden"
       >
-        <img
-          src={skill.image}
-          alt={skill.skillName}
-          className=""
-        />
+        <img src={skill.image} alt="" className="" />
         <div className="p-6 space-y-4">
           <h2 className="text-3xl font-bold text-primary">{skill.skillName}</h2>
-
           <div className="flex flex-wrap gap-5 text-gray-600">
             <p className="flex items-center gap-2">
-              <FaUser className="text-secondary" />
+              <FaUser />
               <span className="font-medium">{skill.providerName}</span>
             </p>
             <p className="flex items-center gap-2">
-              <FaDollarSign className="text-secondary" />
+              <FaDollarSign />
               Price: ${skill.price}
             </p>
-            <p className="flex items-center gap-2">
-              <FaStar className="text-yellow-500" />
-              Rating: {skill.rating}
-            </p>
+            <p className="flex items-center gap-2">⭐ Rating: {skill.rating}</p>
           </div>
 
           <p className="text-gray-500">
@@ -77,12 +65,11 @@ const SkillDetails = () => {
           </p>
         </div>
       </div>
-
       {/* Booking Form */}
       <div
         data-aos="fade-up"
         data-aos-delay="200"
-        className="bg-base-200 mt-10 p-6 rounded-2xl shadow-md"
+        className="bg-base-100 mt-10 p-6 rounded-2xl shadow-md"
       >
         <h3 className="text-2xl font-semibold text-primary mb-4">
           Book a Session
@@ -95,14 +82,14 @@ const SkillDetails = () => {
             type="text"
             name="name"
             placeholder="Your Name"
-            className="input border-0 rounded-lg input-bordered w-full"
+            className="input bg-base-300 border-0 rounded-lg input-bordered w-full"
             required
           />
           <input
             type="email"
             name="email"
             placeholder="Your Email"
-            className="input border-0 rounded-lg input-bordered w-full"
+            className="input bg-base-300 border-0 rounded-lg input-bordered w-full"
             required
           />
           <button type="submit" className="btn btn-primary w-full rounded-lg">

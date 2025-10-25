@@ -7,12 +7,13 @@ import { AuthContext } from "../../context/AuthProvider";
 
 const Navbar = () => {
   const { user, kickOutUser } = use(AuthContext);
+  console.log(user);
   const handleSignOut = () => {
     kickOutUser();
   };
   return (
     <nav className="max-w-11/12 mx-auto">
-      <div className="navbar bg-base-100">
+      <div className="navbar bg-base-200">
         <div className="flex-1">
           <img className="w-10 " src={logo} alt="" />
         </div>
@@ -43,7 +44,10 @@ const Navbar = () => {
                     data-tip={user.displayName || "No Name"}
                   >
                     <img
-                      src={"https://i.ibb.co.com/ycy5ZkrF/user.png"}
+                      src={
+                        user.photoURL ||
+                        "https://i.ibb.co.com/ycy5ZkrF/user.png"
+                      }
                       alt=""
                       className="w-10 h-10 rounded-full border border-gray-500 cursor-pointer"
                     />

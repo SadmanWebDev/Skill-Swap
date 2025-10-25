@@ -1,16 +1,48 @@
-# React + Vite
+ SkillSwap – A Local Skill Exchange Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+SkillSwap is an interactive web application designed to allow people to offer, learn, and exchange skills within their local community. From guitar lessons and graphic design to cooking and yoga — users can connect with local skill providers, schedule sessions, and engage in meaningful knowledge sharing.
 
-Currently, two official plugins are available:
+🌐 Live Website: 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🎯 Project Purpose
 
-## React Compiler
+The goal of SkillSwap is to create a community-driven skill sharing ecosystem where skill-based services can be exchanged without relying solely on money.
+Users can:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+*Share their expertise
 
-## Expanding the ESLint configuration
+*Learn new hobbies or career skills
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+*Build a community network
+
+✨ Key Features
+
+✔ User Authentication (Login, Signup, Google Sign-in)
+✔ Browse skills by category (Music, Tech, Fitness, Languages, etc.)
+✔ Rating & reviews system for experiences
+✔ Responsive UI with modern design
+✔ Secure data storage using Firebase
+✔ Update able profile for each user
+
+📦 Technologies & NPM Packages Used
+
+✔ React Router
+
+✔ Tailwind CSS / DaisyUI (UI Framework)
+
+✔ Fetch API
+
+✔ React-Icons
+
+✔ React-Hot-Toast 
+
+✔ Swiper
+
+✔ AOS Package
+
+✔ Authentication
+
+✔ Firebase Auth
+
+✔ Context API (Global State)
+
