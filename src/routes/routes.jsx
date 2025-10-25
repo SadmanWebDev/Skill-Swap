@@ -7,7 +7,7 @@ import SignUp from "../pages/SignUp/SignUp";
 import PrivetRoute from "../context/PrivetRoute";
 import SkillDetails from "../components/SkillDetails/SkillDetails";
 import MyProfile from "../pages/MyProfile/MyProfile";
-// import Profile from "../pages/Profile/Profile";
+import ForgetPassForm from "../pages/ForgetPassForm/ForgetPassForm";
 
 export const router = createBrowserRouter([
   {
@@ -39,11 +39,11 @@ export const router = createBrowserRouter([
       {
         path:'/profile',
         Component: MyProfile
+      },
+      {
+        path:'/forgetpass',
+        Component: ForgetPassForm
       }
-      // {
-      //   path: "/profile",
-      //   Component: Profile,
-      // },
     ],
   },
 ]);

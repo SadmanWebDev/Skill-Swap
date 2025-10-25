@@ -15,7 +15,7 @@ const Home = () => {
         <PopularSkills></PopularSkills>
       </div>
       <div className="">
-        \<TopProviders></TopProviders>
+        <TopProviders></TopProviders>
       </div>
       <div className="">
         <HowItWorks></HowItWorks>

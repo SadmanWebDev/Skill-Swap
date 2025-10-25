@@ -140,7 +140,7 @@ const SignUp = () => {
           </button>
         </form>
 
-        {/* ✅ Google Login */}
+        {/* Google Login */}
         <button
           className="btn btn-outline w-full mt-3"
           onClick={handleGoogleLogin}

@@ -28,8 +28,7 @@ const AuthProvider = ({ children }) => {
   const signIn = (email, password) => {
     setLoading(true);
     return signInWithEmailAndPassword(auth, email, password)
-      .then(() => {})
-      .catch((error) => setError(error.code));
+      
   };
 
   const kickOutUser = () => {
@@ -61,7 +60,6 @@ const AuthProvider = ({ children }) => {
     kickOutUser,
     loading,
     setLoading,
-    error,
     googleSignIn,
   };
   return <AuthContext value={authData}>{children}</AuthContext>;
