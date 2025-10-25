@@ -2,7 +2,7 @@
 
 SkillSwap is an interactive web application designed to allow people to offer, learn, and exchange skills within their local community. From guitar lessons and graphic design to cooking and yoga — users can connect with local skill providers, schedule sessions, and engage in meaningful knowledge sharing.
 
-🌐 Live Website: 
+🌐 Live Website: https://benevolent-ganache-3626c0.netlify.app/
 
 🎯 Project Purpose
 

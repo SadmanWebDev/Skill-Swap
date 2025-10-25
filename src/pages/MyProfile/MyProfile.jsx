@@ -35,7 +35,11 @@ const MyProfile = () => {
             className="w-24 h-24 rounded-full border mx-auto mb-5 object-cover"
           />
         ) : (
-          <img src="https://i.ibb.co.com/ycy5ZkrF/user.png" alt="" />
+          <img
+            className="w-24 h-24 rounded-full border mx-auto mb-5 object-cover"
+            src="https://i.ibb.co.com/ycy5ZkrF/user.png"
+            alt=""
+          />
         )}
         <h2 className="text-3xl font-semibold mb-2">{user?.displayName}</h2>
         <p className="text-xl mb-6">{user?.email}</p>

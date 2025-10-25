@@ -38,7 +38,7 @@ const SignUp = () => {
         navigate("/");
         e.target.reset();
       })
-      .catch((error) => setError(error.code));
+      .catch((error) => setError(error.message));
     setUser();
   };
 
@@ -48,7 +48,7 @@ const SignUp = () => {
         toast.success("Google Login Successful!");
         navigate("/");
       })
-      .catch((error) => alert(error.code));
+      .catch((error) => setError(error.message));
   };
 
   return (
@@ -103,10 +103,6 @@ const SignUp = () => {
             </div>
             <div>
               {error && <p className="text-error">{error}</p>}
-              <label className="label">
-                <input type="checkbox" defaultChecked className="checkbox" />
-                Accept<span className="text-primary">Term & Conditions</span>
-              </label>
             </div>
             <button type="submit" className="btn btn-primary mt-4">
               SignUp
