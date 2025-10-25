@@ -1,4 +1,4 @@
-import React, { use, useState } from "react";
+import React, { use, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../../context/AuthProvider";
 import { FaEye, FaEyeSlash, FaRegEye } from "react-icons/fa";
@@ -7,11 +7,11 @@ import { FcGoogle } from "react-icons/fc";
 const Login = () => {
   const { googleSignIn, signIn } = use(AuthContext);
   const [showPass, setShowPass] = useState(false);
-  const [email, setEmail] = useState("");
   const location = useLocation();
   const navigate = useNavigate();
   const [error, setError] = useState("");
-
+  const [email, setEmail] = useState("");
+  const emailRef = useRef();
   const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -31,9 +31,10 @@ const Login = () => {
       .catch((error) => console.log(error.code));
   };
 
-  const handleForgetPass = () =>{
-    return setEmail
-  }
+  const handleForgetPass = () => {
+    const email = emailRef.current.value;
+    navigate("/forget-password", { state: { email } });
+  };
 
   return (
     <div className="flex justify-center items-center min-h-screen text-primary">
@@ -46,6 +47,7 @@ const Login = () => {
           <fieldset className="fieldset">
             <label className="label">Email</label>
             <input
+              ref={emailRef}
               type="email"
               name="email"
               value={email}
@@ -70,15 +72,13 @@ const Login = () => {
               </button>
             </div>
             {error && <p className="text-red-500">{error}</p>}
-            <Link error={error} to="/forgetpass">
-              <button
-                type="button"
-                className="link link-hover"
-                onClick={handleForgetPass}
-              >
-                Forget Password?
-              </button>
-            </Link>
+            <button
+              type="button"
+              className="link link-hover text-left"
+              onClick={handleForgetPass}
+            >
+              Forget Password?
+            </button>
 
             {/* Open the modal using document.getElementById('ID').showModal() method */}
             {/* <div>

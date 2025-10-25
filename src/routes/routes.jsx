@@ -37,13 +37,13 @@ export const router = createBrowserRouter([
         Component: SignUp,
       },
       {
-        path:'/profile',
-        Component: MyProfile
+        path: "/profile",
+        Component: MyProfile,
       },
       {
-        path:'/forgetpass',
-        Component: ForgetPassForm
-      }
+        path: "/forget-password",
+        Component: ForgetPassForm,
+      },
     ],
   },
 ]);
